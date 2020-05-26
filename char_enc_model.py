@@ -1,16 +1,15 @@
 
 # In[1]:
-get_ipython().system('pip install --upgrade pandas')
+!pip install --upgrade pandas
 
 
 # In[2]:
 import pandas as pd
 import numpy as np
 import boto3
-import re
 import sagemaker
 from sagemaker import get_execution_role
-from sklearn.model_selection import train_test_split
+
 
 
 # In[3]:
@@ -223,7 +222,3 @@ estimator.set_hyperparameters(max_depth = 3,
                               num_round = 1000) #10
 
 estimator.fit({'train' : s3_input_train})
-
-
-# predicted = 0.0632267817855
-# facebook.com
